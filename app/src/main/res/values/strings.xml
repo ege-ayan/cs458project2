@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">cs458</string>
+    <string-array name="education_array">
+        <item>High School</item>
+        <item>Bachelor\'s Degree</item>
+        <item>Master\'s Degree</item>
+        <item>PhD</item>
+        <item>Other</item>
+    </string-array>
+</resources>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Survey"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="textCapWords"
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/surnameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Surname"
+                android:inputType="textCapWords"
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/birthDateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Birth Date (dd/MM/yyyy)"
+                android:focusable="false"
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp" />
+
+            <Spinner
+                android:id="@+id/educationSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/cityEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:inputType="textCapWords"
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp" />
+
+            <RadioGroup
+                android:id="@+id/genderRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <RadioButton
+                    android:id="@+id/maleRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/femaleRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:layout_marginStart="16dp" />
+
+                <RadioButton
+                    android:id="@+id/otherRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other"
+                    android:layout_marginStart="16dp" />
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:id="@+id/aiModelCheckboxesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <CheckBox
+                    android:id="@+id/checkBoxChatGPT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChatGPT"
+                    android:textColor="@color/black" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxBard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bard"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxClaude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Claude"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxCopilot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Copilot"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/defectsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/aiUseCaseEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Describe a beneficial AI use case in daily life"
+                android:inputType="textMultiLine"
+                android:layout_marginTop="16dp"
+                android:minHeight="100dp"
+                android:backgroundTint="@color/teal_200"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/submitSurveyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:textColor="@color/black"
+
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp" />
+</LinearLayout>
