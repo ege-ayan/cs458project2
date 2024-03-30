@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="editTextChatGPT"/>
+    <item type="id" name="editTextBard"/>
+    <item type="id" name="editTextClaude"/>
+    <item type="id" name="editTextCopilot"/>
+</resources>
