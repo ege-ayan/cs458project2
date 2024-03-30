@@ -163,7 +163,41 @@ class MainActivityTests(unittest.TestCase):
         success_toast = wait.until(EC.presence_of_element_located((AppiumBy.XPATH, toast_locator)))
         self.assertEqual(success_toast.get_attribute("text"), "Age must be between 13 and 80 years old")
 
+    def test_sql_injection(self):
+        name_field = self.driver.find_element(AppiumBy.ID, "com.example.cs458:id/nameEditText")
+        name_field.send_keys("John")
 
+        surname_field = self.driver.find_element(AppiumBy.ID, "com.example.cs458:id/surnameEditText")
+        surname_field.send_keys("Doe")
+
+        birth_date_field = self.driver.find_element(AppiumBy.ID, "com.example.cs458:id/birthDateEditText")
+        birth_date_field.send_keys("21/05/1990")
+
+        city_field = self.driver.find_element(AppiumBy.ID, "com.example.cs458:id/cityEditText")
+        city_field.send_keys("DROP TABLE")
+
+        gender_radio_button = self.driver.find_element(AppiumBy.ID, "com.example.cs458:id/genderRadioGroup")
+        male_radio_button = gender_radio_button.find_elements(AppiumBy.CLASS_NAME, "android.widget.RadioButton")[0]
+        male_radio_button.click()
+
+        ai_model_chatgpt_checkbox = self.driver.find_element(AppiumBy.ID, "com.example.cs458:id/checkBoxChatGPT")
+        ai_model_chatgpt_checkbox.click()
+
+        wait = WebDriverWait(self.driver, 10)
+        chatgpt_defect_field = wait.until(EC.presence_of_element_located((AppiumBy.ID, "com.example.cs458:id/editTextChatGPT")))
+
+        chatgpt_defect_field.send_keys("Limited knowledge base")
+        ai_use_case_field = self.driver.find_element(AppiumBy.ID, "com.example.cs458:id/aiUseCaseEditText")
+        ai_use_case_field.send_keys("Providing assistance in daily tasks")
+
+        submit_button = self.driver.find_element(AppiumBy.ID, "com.example.cs458:id/submitSurveyButton")
+        submit_button.click()
+
+        toast_locator = '//android.widget.Toast'
+        wait = WebDriverWait(self.driver, 10)
+        success_toast = wait.until(EC.presence_of_element_located((AppiumBy.XPATH, toast_locator)))
+        self.assertEqual(success_toast.get_attribute("text"), "Please avoid using restricted phrases")
+        
     def tearDown(self):
         if self.driver:
             self.driver.quit()
